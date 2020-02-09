@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.sass';
 import LeftSidebar from "pages/design/LeftSidebar";
+import Canvas from "pages/design/Canvas";
 import RightSidebar from "pages/design/RightSidebar";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
                     <LeftSidebar/>
                 </div>
                 <div className="canvas-area">
-                    Canvas
+                    <Canvas/>
                 </div>
                 <div className="right-sidebar">
                     <RightSidebar/>
