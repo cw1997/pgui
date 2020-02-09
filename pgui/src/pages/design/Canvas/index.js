@@ -55,10 +55,14 @@ class Canvas extends Component {
             <div className="Canvas">
                 <div className="operate-area">
                     <div className="canvas-area">
-                        <canvas id="canvas">
+                        <canvas id="canvas"
+                                width="800px"
+                                height="480px">
                             Canvas no support. Require HTML5 Browser. (canvas-layer)
                         </canvas>
-                        <canvas id="drag">
+                        <canvas id="drag"
+                                width="800px"
+                                height="480px">
                             Canvas no support. Require HTML5 Browser. (drag-layer)
                         </canvas>
                     </div>
