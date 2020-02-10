@@ -33,19 +33,10 @@ function ConfigItem(props) {
 function SpinButtonItem(props) {
     return (
         <ConfigItem title={props.title}>
-            <SpinButton
-                defaultValue="0"
-                label={props.title + ' :'}
-                min={0}
-                max={800}
-                step={10}
-                // iconProps={{ iconName: 'IncreaseIndentLegacy' }}
-                // tslint:disable:jsx-no-lambda
-                onFocus={() => console.log('onFocus called')}
-                onBlur={() => console.log('onBlur called')}
-                incrementButtonAriaLabel={'Increase value by 1'}
-                decrementButtonAriaLabel={'Decrease value by 1'}
-            />
+            <label htmlFor={props.title}>
+                {props.title}
+                <input id={props.title}/>
+            </label>
         </ConfigItem>
     )
 }

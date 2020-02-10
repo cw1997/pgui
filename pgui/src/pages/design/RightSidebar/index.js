@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import { SpinButton } from 'office-ui-fabric-react/lib/SpinButton';
 
 import './index.sass'
 import Collapse from "components/Collapse";
