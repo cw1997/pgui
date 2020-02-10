@@ -1,10 +1,12 @@
 import React, {Component} from "react";
 
 import './index.sass'
+import {addElement, setSelectedControl} from "redux/actions";
+import {connect} from "react-redux";
 
-export default
 class Canvas extends Component {
     componentDidMount() {
+        let that = this;
         let drag = document.querySelector('#drag');
         let dragContext = drag.getContext('2d');
         let canvas = document.querySelector('#canvas');
@@ -48,6 +50,9 @@ class Canvas extends Component {
             canvasContext.strokeRect(downX, downY, width, height);
             // canvasContext.stroke();
             drag.onmousemove = null;
+            // add drawn control to ElementManager
+            let elementName = prompt('please input element name:');
+            that.props.dispatch(addElement(elementName));
         };
     }
     render() {
@@ -71,3 +76,6 @@ class Canvas extends Component {
         )
     }
 }
+
+const CanvasWithRedux = connect()(Canvas);
+export default CanvasWithRedux;
