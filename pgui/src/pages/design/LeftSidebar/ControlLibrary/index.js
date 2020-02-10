@@ -49,8 +49,7 @@ class ControlItem extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(control) {
-        console.info('control click');
-        // this.props.onSelectControl(control);
+        // console.info('control click');
         this.props.dispatch(setSelectedControl(control));
     }
     render() {
