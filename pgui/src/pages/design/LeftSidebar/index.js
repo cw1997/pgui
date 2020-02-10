@@ -2,8 +2,8 @@ import React, {Component} from "react";
 
 import './index.sass'
 import Collapse from "components/Collapse";
-import ControlLibrary from "pages/design/LeftSidebar/ControlLibrary";
 import ControlLibraryWithRedux from "pages/design/LeftSidebar/ControlLibrary/redux";
+import ElementManagerWithRedux from "pages/design/LeftSidebar/ElementManager/redux";
 
 export default
 class LeftSidebar extends Component {
@@ -14,7 +14,9 @@ class LeftSidebar extends Component {
                 <Collapse title={'Control Library'}>
                     <ControlLibraryWithRedux/>
                 </Collapse>
-                <Collapse title={'Element Manager'}>Collapse</Collapse>
+                <Collapse title={'Element Manager'}>
+                    <ElementManagerWithRedux/>
+                </Collapse>
             </div>
         )
     }
