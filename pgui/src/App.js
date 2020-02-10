@@ -1,10 +1,12 @@
 import React from 'react';
+// my file
 import './App.sass';
 import LeftSidebar from "pages/design/LeftSidebar";
 import Canvas from "pages/design/Canvas";
 import RightSidebar from "pages/design/RightSidebar";
-import {compose, createStore} from "redux";
+// react-redux
 import pGui from "redux/reduces";
+import {compose, createStore} from "redux";
 import {Provider} from "react-redux";
 
 // add redux-devtools by cw1997 2020-02-10 15:54:28
