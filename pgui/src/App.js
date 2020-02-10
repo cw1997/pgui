@@ -8,6 +8,10 @@ import RightSidebar from "pages/design/RightSidebar";
 import pGui from "redux/reduces";
 import {compose, createStore} from "redux";
 import {Provider} from "react-redux";
+// ui-fabric
+import { initializeIcons } from '@uifabric/icons';
+initializeIcons();
+
 
 // add redux-devtools by cw1997 2020-02-10 15:54:28
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
