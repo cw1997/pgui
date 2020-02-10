@@ -26,7 +26,7 @@ export function setSelectedElement(elementName) {
 
 export function addElement(elementName) {
     return {
-        type: SELECTED_ELEMENT,
+        type: ADD_ELEMENT,
         elementName,
     }
 }

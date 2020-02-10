@@ -18,7 +18,13 @@ function pGui(state=initialState, action) {
             return state;
 
         case ADD_ELEMENT:
-            return {...state, elements: state.elements + action.elementName};
+            // remember not edit input parameter, this is reduces principles.
+            // Quote: We don't mutate the state.
+            // We create a copy with Object.assign().
+            // Object.assign(state, { visibilityFilter: action.filter }) is also wrong:
+            // it will mutate the first argument. You must supply an empty object as the first parameter.
+            // You can also enable the object spread operator proposal to write { ...state, ...newState } instead.
+            return {...state, elements: [...state.elements, action.elementName]};
         default:
             return state;
     }
