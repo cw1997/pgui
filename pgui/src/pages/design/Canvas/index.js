@@ -9,17 +9,17 @@ class Canvas extends Component {
         let dragContext = drag.getContext('2d');
         let canvas = document.querySelector('#canvas');
         let canvasContext = canvas.getContext('2d');
-        canvasContext.strokeRect(0, 0, 100, 100);
+        // canvasContext.strokeRect(0, 0, 100, 100);
         // dragContext.scale(0.625, 0.625);
         // canvasContext.scale(0.625, 0.625);
-        console.info(drag);
+        // console.info(drag);
         let downX, downY, upX, upY;
         let clearDragContext = function () {
             dragContext.clearRect(0, 0, drag.width, drag.height);
         };
-        drag.onmousemove = function (e) {
-            console.info(e.offsetX, e.offsetY)
-        };
+        // drag.onmousemove = function (e) {
+        //     console.info(e.offsetX, e.offsetY)
+        // };
         let onmousemove = function (e) {
             // let x = e.clientX - e.offsetX;
             // let y = e.clientY - e.offsetY;
@@ -28,7 +28,7 @@ class Canvas extends Component {
             let width = upX - downX;
             let height = upY - downY;
             // console.info(x, y, e.clientX, e.clientY, e.offsetX, e.offsetY);
-            console.info(e.offsetX, e.offsetY);
+            // console.info(e.offsetX, e.offsetY);
             clearDragContext();
             dragContext.strokeRect(downX, downY, width, height);
         };
