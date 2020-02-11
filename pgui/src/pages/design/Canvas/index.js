@@ -52,7 +52,17 @@ class Canvas extends Component {
             drag.onmousemove = null;
             // add drawn control to ElementManager
             let elementName = prompt('please input element name:');
-            that.props.dispatch(addElement(elementName));
+            let element = {
+                id: elementName,
+                text: '',
+                appearance: {
+                    width,
+                    height,
+                    x: downX,
+                    y: downY,
+                }
+            };
+            that.props.dispatch(addElement(element));
         };
     }
     render() {

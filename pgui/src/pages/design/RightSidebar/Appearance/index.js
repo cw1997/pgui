@@ -4,16 +4,25 @@ import './index.sass'
 
 export default
 function Appearance(props) {
-    return (
-        <div className="Appearance ms-Fabric">
-            <SpinButtonItem title={'ID'}/>
-            <SpinButtonItem title={'Text'}/>
-            <SpinButtonItem title={'Width'}/>
-            <SpinButtonItem title={'Height'}/>
-            <SpinButtonItem title={'X'}/>
-            <SpinButtonItem title={'Y'}/>
-        </div>
-    )
+    if (props.appearance) {
+        return (
+            <div className="Appearance">
+                <SpinButtonItem title={'ID'}>{props.id}</SpinButtonItem>
+                <SpinButtonItem title={'Text'}>{props.text}</SpinButtonItem>
+                <SpinButtonItem title={'Width'}>{props.appearance.width}</SpinButtonItem>
+                <SpinButtonItem title={'Height'}>{props.appearance.height}</SpinButtonItem>
+                <SpinButtonItem title={'X'}>{props.appearance.x}</SpinButtonItem>
+                <SpinButtonItem title={'Y'}>{props.appearance.y}</SpinButtonItem>
+            </div>
+        )
+    } else {
+        return (
+            <div className="Appearance">
+                Not select anyone element.
+            </div>
+        )
+    }
+
 }
 
 function ConfigItem(props) {
@@ -34,8 +43,10 @@ function SpinButtonItem(props) {
         <ConfigItem title={props.title}>
             <label htmlFor={props.title}>
                 {props.title}
-                <input id={props.title}/>
+                <input id={props.title} value={props.value}/>
             </label>
         </ConfigItem>
     )
 }
+
+

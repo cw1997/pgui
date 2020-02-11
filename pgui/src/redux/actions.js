@@ -24,9 +24,9 @@ export function setSelectedElement(elementName) {
     }
 }
 
-export function addElement(elementName) {
+export function addElement(element) {
     return {
         type: ADD_ELEMENT,
-        elementName,
+        element,
     }
 }

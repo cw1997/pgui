@@ -16,9 +16,9 @@ class ElementManager extends Component {
         let selectedElement = this.props.selectedElement;
         let elements = this.props.elements;
         const elementList = elements.map((element, key) =>
-            (selectedElement === element) ?
-                <ElementItemWithRedux key={key} selected>{element}</ElementItemWithRedux> :
-                <ElementItemWithRedux key={key}>{element}</ElementItemWithRedux>);
+            (selectedElement === element.id) ?
+                <ElementItemWithRedux key={key} selected>{element.id}</ElementItemWithRedux> :
+                <ElementItemWithRedux key={key}>{element.id}</ElementItemWithRedux>);
         return (
             <div className="ElementManager">
                 {elementList}
@@ -32,8 +32,8 @@ class ElementItem extends Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
-    handleClick(element) {
-        this.props.dispatch(setSelectedElement(element));
+    handleClick(elementId) {
+        this.props.dispatch(setSelectedElement(elementId));
     }
     render() {
         return (

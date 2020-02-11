@@ -4,6 +4,7 @@ import './index.sass'
 import Collapse from "components/Collapse";
 import Appearance from "pages/design/RightSidebar/Appearance";
 import Behavior from "pages/design/RightSidebar/Behavior";
+import AppearanceWithRedux from "pages/design/RightSidebar/Appearance/redux";
 
 export default
 class RightSidebar extends Component {
@@ -11,7 +12,7 @@ class RightSidebar extends Component {
         return (
             <div className="RightSidebar">
                 <Collapse title={'Appearance'}>
-                    <Appearance/>
+                    <AppearanceWithRedux/>
                 </Collapse>
                 <Collapse title={'Behavior'}>
                     <Behavior/>

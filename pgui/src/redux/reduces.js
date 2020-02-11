@@ -24,7 +24,10 @@ function pGui(state=initialState, action) {
             // Object.assign(state, { visibilityFilter: action.filter }) is also wrong:
             // it will mutate the first argument. You must supply an empty object as the first parameter.
             // You can also enable the object spread operator proposal to write { ...state, ...newState } instead.
-            return {...state, elements: [...state.elements, action.elementName]};
+            let elements = new Array([...state.elements]);
+            console.log(elements);
+            elements[action.element.id] = action.element;
+            return {...state, elements};
         default:
             return state;
     }
