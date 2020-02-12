@@ -2,18 +2,23 @@ import {Actions} from "./MyAction";
 import {AnyAction} from "redux";
 import State from "./State";
 import {Controls} from "./objects/Control";
+import IMyElement from "./objects/MyElement";
 
 let initialState : State = new State();
-initialState = {
-    selectedControl: Controls.select,
-    selectedElement: null,
-    elements: [],
-    controls: [
-        Controls.select,
-        Controls.button,
-        Controls.text,
-    ],
-};
+initialState.selectedControl = Controls.select;
+initialState.selectedElement = null;
+initialState.elements = new Map<IMyElement['id'], IMyElement>();
+initialState.controls = new Array<Controls>(
+    Controls.select,
+    Controls.button,
+    Controls.text,
+);
+// initialState = {
+//     selectedControl: Controls.select,
+//     selectedElement: null,
+//     elements: [],
+//     controls:
+// };
 
 export default
 class Reduce {
@@ -31,10 +36,16 @@ class Reduce {
                 // Object.assign(state, { visibilityFilter: action.filter }) is also wrong:
                 // it will mutate the first argument. You must supply an empty object as the first parameter.
                 // You can also enable the object spread operator proposal to write { ...state, ...newState } instead.
-                let elements = new Array(...state.elements);
+                let elements = new Map<IMyElement['id'], IMyElement>(state.elements);
                 console.log(elements);
-                elements[action.element.id] = action.element;
+                const element : IMyElement = action.element;
+                const eid : IMyElement['id'] = element.id;
+                console.log(eid, element);
+                elements.set(eid, element);
+                console.log(elements);
+                // return Object.assign({}, state, {elements}) ;
                 return {...state, elements};
+
             default:
                 return state;
         }
