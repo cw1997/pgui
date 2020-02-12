@@ -13,12 +13,6 @@ initialState.controls = new Array<Controls>(
     Controls.button,
     Controls.text,
 );
-// initialState = {
-//     selectedControl: Controls.select,
-//     selectedElement: null,
-//     elements: [],
-//     controls:
-// };
 
 export default
 class Reduce {
@@ -37,13 +31,9 @@ class Reduce {
                 // it will mutate the first argument. You must supply an empty object as the first parameter.
                 // You can also enable the object spread operator proposal to write { ...state, ...newState } instead.
                 let elements = new Map<IMyElement['id'], IMyElement>(state.elements);
-                console.log(elements);
                 const element : IMyElement = action.element;
                 const eid : IMyElement['id'] = element.id;
-                console.log(eid, element);
                 elements.set(eid, element);
-                console.log(elements);
-                // return Object.assign({}, state, {elements}) ;
                 return {...state, elements};
 
             default:
