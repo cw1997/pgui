@@ -12,11 +12,10 @@ class ElementManager extends Component <any, any> {
     //     super(props);
     // }
     render() {
-        // const selectedElement = this.props.selectedElement;
         const elements = this.props.elements;
-        const elementList = elements.forEach(
-            (element : IMyElement) =>
-                (<ElementItemWithRedux>{element}</ElementItemWithRedux>)
+        const elementList : any[] = [];
+        elements.forEach(
+            (element : IMyElement) => {elementList.push(<ElementItemWithRedux element={element} />)}
         );
         return (
             <div className="ElementManager">
