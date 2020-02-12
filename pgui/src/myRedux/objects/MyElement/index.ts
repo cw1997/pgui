@@ -3,12 +3,13 @@ import Behavior from "./Behavior";
 import {Controls} from "../Control";
 
 export default
-class MyElement {
+class IMyElement {
     id : string;
-    type: Controls;
-    appearance : Appearance;
-    behavior : Behavior;
-    constructor(id : string) {
+    type : Controls;
+    appearance? : Appearance;
+    behavior? : Behavior;
+    constructor(id : string, type : Controls) {
         this.id = id;
+        this.type = type;
     }
 }

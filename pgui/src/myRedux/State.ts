@@ -1,10 +1,12 @@
 import {Controls} from "./objects/Control";
+import MyElement from "./objects/MyElement";
+import IMyElement from "./objects/MyElement";
 
 export default
 class State {
     selectedControl : Controls;
-    selectedElement : string | null;
-    elements : Element[];
+    selectedElement : IMyElement | null;
+    elements : MyElement[];
     // canvases : ;
     controls: Controls[];
 }

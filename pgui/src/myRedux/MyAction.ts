@@ -1,11 +1,12 @@
 import MyElement from "./objects/MyElement";
 import {AnyAction} from "redux";
 import {Controls} from "./objects/Control";
+import IMyElement from "./objects/MyElement";
 
-export
-interface IAction {
-    action : Actions,
-}
+// export
+// interface IAction {
+//     action : Actions,
+// }
 
 export
 enum Actions {
@@ -17,18 +18,18 @@ enum Actions {
 
 export default
 class MyAction {
-    static getSelectedControl() : AnyAction {
-        return {
-            type: Actions.getSelectedControl
-        }
-    }
+    // static getSelectedControl() : AnyAction {
+    //     return {
+    //         type: Actions.getSelectedControl
+    //     }
+    // }
     static setSelectedControl(control : Controls) : AnyAction {
         return {
             type: Actions.setSelectedControl,
             control,
         }
     }
-    static setSelectedElement(element: MyElement["id"]) : AnyAction {
+    static setSelectedElement(element: IMyElement) : AnyAction {
         return {
             type: Actions.setSelectedElement,
             element,

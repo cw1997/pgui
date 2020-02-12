@@ -5,22 +5,24 @@ import {Controls} from "./objects/Control";
 
 let initialState : State = new State();
 initialState = {
-    selectedControl: Controls.Select,
+    selectedControl: Controls.select,
     selectedElement: null,
     elements: [],
-    controls: [],
+    controls: [
+        Controls.select,
+        Controls.button,
+        Controls.text,
+    ],
 };
 
 export default
 class Reduce {
     static pGui(state=initialState, action: AnyAction) : State {
         switch (action.type) {
-            case Actions.getSelectedControl:
-                return {...state, selectedControl: action.controlName};
             case Actions.setSelectedControl:
-                return {...state, selectedElement: action.elementName};
+                return {...state, selectedControl: action.control};
             case Actions.setSelectedElement:
-                return state;
+                return {...state, selectedElement: action.element};
 
             case Actions.addElement:
                 // remember not edit input parameter, this is reduces principles.
@@ -29,10 +31,10 @@ class Reduce {
                 // Object.assign(state, { visibilityFilter: action.filter }) is also wrong:
                 // it will mutate the first argument. You must supply an empty object as the first parameter.
                 // You can also enable the object spread operator proposal to write { ...state, ...newState } instead.
-                let elements = new Array([...state.elements]);
+                let elements = new Array(...state.elements);
                 console.log(elements);
                 elements[action.element.id] = action.element;
-                return {...state, ...elements};
+                return {...state, elements};
             default:
                 return state;
         }

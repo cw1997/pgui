@@ -1,23 +1,19 @@
-
-export default
-class Control {
-    Select : Controls;
-    Button : Controls;
-    Text : Controls;
-}
+import Appearance from "../MyElement/Appearance";
+import Behavior from "../MyElement/Behavior";
 
 export
 enum Controls {
-    Select,
-    Button,
-    Text,
+    canvas,
+    select,
+    button,
+    text,
 }
 
 export
 let controlList : Controls[] = [
-    Controls.Select,
-    Controls.Button,
-    Controls.Text,
+    Controls.select,
+    Controls.button,
+    Controls.text,
 ];
 
 //
