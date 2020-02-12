@@ -1,9 +1,7 @@
 import React, {Component} from "react";
-import classnames from 'classnames'
 
 import './index.sass'
 import ControlItemWithRedux from "./ControlItem";
-import MyAction from "../../../../myRedux/MyAction";
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
 import State from "../../../../myRedux/State";

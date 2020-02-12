@@ -1,6 +1,3 @@
-import Appearance from "../MyElement/Appearance";
-import Behavior from "../MyElement/Behavior";
-
 export
 enum Controls {
     canvas,

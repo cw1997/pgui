@@ -2,7 +2,6 @@ import React, {Component} from "react";
 
 import './index.sass'
 import Collapse from "components/Collapse";
-import Appearance from "pages/design/RightSidebar/Appearance";
 import Behavior from "pages/design/RightSidebar/Behavior";
 import AppearanceWithRedux from "pages/design/RightSidebar/Appearance";
 
