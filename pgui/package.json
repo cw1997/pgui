@@ -44,7 +44,9 @@
     ]
   },
   "devDependencies": {
+    "@types/redux-devtools-extension": "^2.13.2",
     "node-sass": "^4.13.1",
-    "redux-devtools": "^3.5.0"
+    "redux-devtools": "^3.5.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
