@@ -17,13 +17,10 @@ class ControlItem extends Component <IProps, any> {
     c : Controls;
     constructor(props : any) {
         super(props);
-        // this.state = {height: 'auto'};
         this.handleClick = this.handleClick.bind(this);
         this.c = this.props.children;
     }
     handleClick() {
-        // console.info('control click');
-        // this.props.dispatch(MyAction.setSelectedControl(control));
         this.props.onSelectControl(this.c);
     }
     render() {

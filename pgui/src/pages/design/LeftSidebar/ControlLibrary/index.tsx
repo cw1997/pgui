@@ -13,18 +13,10 @@ class ControlLibrary extends Component <any, any> {
     //     super(props);
     // }
     render() {
-        // const selectedControl = this.props.selectedControl;
         const controlListJsx = this.props.controls.map(
             (control : Controls, key : number) =>
                 <ControlItemWithRedux key={key}>{control}</ControlItemWithRedux>
         );
-        // {
-        //     if (selectedControl === control) {
-        //         <ControlItem selected>{control}</ControlItem>
-        //     } else {
-        //         <ControlItem>{control}</ControlItem>
-        //     }
-        // });
         return (
             <div className="ControlLibrary">
                 {controlListJsx}
@@ -43,7 +35,6 @@ const mapDispatchToProps = (dispatch : Dispatch) => {
 
 const mapStateToProps = (state : State) => {
     return {
-        // selectedControl: state.selectedControl,
         controls: state.controls,
     }
 };

@@ -41,7 +41,7 @@ class ElementItem extends Component <IProps, any> {
             >
                 {this.element.id}
             </div>
-    )
+        )
     }
 }
 
