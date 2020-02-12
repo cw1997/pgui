@@ -17,7 +17,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    // add by cw1997 2020-02-12 13:43:55
+    // I don't need the getter & setter method
+    "strictPropertyInitialization": false,
   },
   "include": [
     "src"
