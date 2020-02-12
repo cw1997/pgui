@@ -4,8 +4,9 @@ import {connect} from "react-redux";
 import {AnyAction, Dispatch} from "redux";
 
 import MyAction from "../../../../../myRedux/MyAction";
-import MyElement from "../../../../../myRedux/objects/MyElement";
+import IMyElement from "../../../../../myRedux/objects/MyElement";
 import State from "../../../../../myRedux/State";
+import {Controls} from "../../../../../myRedux/objects/Control";
 
 // interface IProps {
 //     children : MyElement["id"];
@@ -20,15 +21,16 @@ class ControlItem extends Component <any, any> {
         // this.state = {height: 'auto'};
         this.handleClick = this.handleClick.bind(this);
     }
-    handleClick(control : any) {
+    handleClick() {
         // console.info('control click');
-        this.props.dispatch(MyAction.setSelectedControl(control));
+        // this.props.dispatch(MyAction.setSelectedControl(control));
+        this.props.onSelectControl(this.props.control);
     }
     render() {
         return (
             <div
                 className={classnames('ControlItem', {'ControlItem-selected': this.props.selected})}
-                onClick={this.handleClick.bind(this, this.props.children)}
+                onClick={this.handleClick}
             >
                 {this.props.children}
             </div>
@@ -38,9 +40,9 @@ class ControlItem extends Component <any, any> {
 
 const mapDispatchToProps = (dispatch : Dispatch) => {
     return {
-        // onSelectControl: (control : any) => {
-        //     dispatch(MyAction.setSelectedControl(control))
-        // }
+        onSelectControl: (control : Controls) => {
+            dispatch(MyAction.setSelectedControl(control))
+        }
     }
 };
 

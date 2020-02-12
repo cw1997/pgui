@@ -18,8 +18,8 @@ class ControlLibrary extends Component <any, any> {
         const selectedControl = this.props.selectedControl;
         const controlListJsx = this.props.controls.map((control : Controls, key : number) =>
             (selectedControl === control) ?
-                <ControlItemWithRedux key={key} selected>{control}</ControlItemWithRedux> :
-                <ControlItemWithRedux key={key}>{control}</ControlItemWithRedux>);
+                <ControlItemWithRedux key={key} control={control} selected>{Controls[control]}</ControlItemWithRedux> :
+                <ControlItemWithRedux key={key} control={control}>{Controls[control]}</ControlItemWithRedux>);
         // {
         //     if (selectedControl === control) {
         //         <ControlItem selected>{control}</ControlItem>
