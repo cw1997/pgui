@@ -8,8 +8,4 @@ class IMyElement {
     type : Controls;
     appearance? : Appearance;
     behavior? : Behavior;
-    constructor(id : string, type : Controls) {
-        this.id = id;
-        this.type = type;
-    }
 }

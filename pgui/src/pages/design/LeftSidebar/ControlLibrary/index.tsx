@@ -9,15 +9,15 @@ import {Controls} from "../../../../myRedux/objects/Control";
 
 
 class ControlLibrary extends Component <any, any> {
-    constructor(props : any) {
-        super(props);
-    }
+    // constructor(props : any) {
+    //     super(props);
+    // }
     render() {
-        const selectedControl = this.props.selectedControl;
-        const controlListJsx = this.props.controls.map((control : Controls, key : number) =>
-            (selectedControl === control) ?
-                <ControlItemWithRedux key={key} control={control} selected>{Controls[control]}</ControlItemWithRedux> :
-                <ControlItemWithRedux key={key} control={control}>{Controls[control]}</ControlItemWithRedux>);
+        // const selectedControl = this.props.selectedControl;
+        const controlListJsx = this.props.controls.map(
+            (control : Controls) =>
+                <ControlItemWithRedux>{control}</ControlItemWithRedux>
+        );
         // {
         //     if (selectedControl === control) {
         //         <ControlItem selected>{control}</ControlItem>
@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch : Dispatch) => {
 
 const mapStateToProps = (state : State) => {
     return {
-        selectedControl: state.selectedControl,
+        // selectedControl: state.selectedControl,
         controls: state.controls,
     }
 };
