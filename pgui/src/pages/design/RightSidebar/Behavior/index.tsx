@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React from "react";
 
 import './index.sass'
 
 export default
-function Behavior(props) {
+function Behavior(props : any) {
     return (
         <div className="Behavior ms-Fabric">
             <ConfigItem label={'Behavior'}>
@@ -15,7 +15,7 @@ function Behavior(props) {
     )
 }
 
-function ConfigItem(props) {
+function ConfigItem(props : any) {
     return (
         <div className="ConfigItem">
             <div className="config-item-label">

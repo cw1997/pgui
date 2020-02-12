@@ -2,11 +2,11 @@ import React, {Component} from "react";
 
 import './index.sass'
 import Collapse from "components/Collapse";
-import ControlLibraryWithRedux from "pages/design/LeftSidebar/ControlLibrary/redux";
-import ElementManagerWithRedux from "pages/design/LeftSidebar/ElementManager/redux";
+import ControlLibraryWithRedux from "pages/design/LeftSidebar/ControlLibrary";
+import ElementManagerWithRedux from "pages/design/LeftSidebar/ElementManager";
 
 export default
-class LeftSidebar extends Component {
+class LeftSidebar extends Component <any, any> {
     render() {
         return (
             <div className="LeftSidebar">

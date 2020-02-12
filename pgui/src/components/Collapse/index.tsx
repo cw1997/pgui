@@ -2,8 +2,17 @@ import React, {Component} from "react";
 
 import './index.sass'
 
-export default class Collapse extends Component {
-    constructor(props) {
+interface IProps {
+    title : string;
+}
+
+interface IState {
+    height : string;
+}
+
+export default
+class Collapse extends Component <IProps, IState> {
+    constructor(props : any) {
         super(props);
         this.state = {height: 'auto'};
         this.handleClick = this.handleClick.bind(this);

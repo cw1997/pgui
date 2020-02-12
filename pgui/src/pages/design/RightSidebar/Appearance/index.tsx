@@ -1,9 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 
 import './index.sass'
+import {connect} from "react-redux";
+import State from "../../../../myRedux/State";
+import {Dispatch} from "redux";
 
-export default
-function Appearance(props) {
+function Appearance(props : any) {
     if (props.appearance) {
         return (
             <div className="Appearance">
@@ -25,7 +27,7 @@ function Appearance(props) {
 
 }
 
-function ConfigItem(props) {
+function ConfigItem(props : any) {
     return (
         <div className="ConfigItem">
             <div className="config-item-label">
@@ -38,7 +40,7 @@ function ConfigItem(props) {
     )
 }
 
-function SpinButtonItem(props) {
+function SpinButtonItem(props : any) {
     return (
         <ConfigItem title={props.title}>
             <label htmlFor={props.title}>
@@ -50,3 +52,38 @@ function SpinButtonItem(props) {
 }
 
 
+const mapDispatchToProps = (dispatch : Dispatch) => {
+    return {
+        // onSelectControl: (control : any) => {
+        //     dispatch(setSelectedControl(control))
+        // }
+    }
+};
+
+const mapStateToProps = (state : State) => {
+    return {
+        id: null,
+        text: null,
+        appearance: null,
+    }
+    // if (state.selectedControl && state.elements[state.selectedControl]) {
+    //     return {
+    //         id: state.elements[state.selectedControl].id,
+    //         text: state.elements[state.selectedControl].text,
+    //         appearance: state.elements[state.selectedControl].appearance,
+    //     }
+    // } else {
+    //     return {
+    //         id: null,
+    //         text: null,
+    //         appearance: null,
+    //     }
+    // }
+};
+
+const AppearanceWithRedux = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Appearance);
+
+export default AppearanceWithRedux;
