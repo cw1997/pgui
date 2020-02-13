@@ -16,19 +16,18 @@ import MyAction from "../../../../../myRedux/MyAction";
 
 class MyInput extends Component<any, any> {
     element : any;
-    value : any;
     constructor(props : any) {
         super(props);
         this.handleUpdate = this.handleUpdate.bind(this);
         if (this.props.element) {
-            this.element = this.props.element;
-            // this.value = this.element[this.props.nameKey];
-            this.value = Reflect.get(this.element, this.props.nameKey);
+            this.element = {...this.props.element};
         }
     }
-    handleUpdate () {
+    handleUpdate (event : any) {
         if (this.element) {
-            Reflect.set(this.element, this.props.nameKey, this.value);
+            // Reflect.set(this.element, this.props.nameKey, this.value);
+            let value : string = event.target.value;
+            this.element[this.props.nameKey] = value;
             this.props.onUpdateElement(this.element);
         }
         // this.props.selectedElement[this.props.nameKey] = this.value;
@@ -38,7 +37,7 @@ class MyInput extends Component<any, any> {
             <div className="MyInput">
                 <label htmlFor={this.props.title}>
                     {this.props.title}
-                    <input id={this.props.title} value={this.value} onChange={this.handleUpdate} />
+                    <input id={this.props.title} value={this.props.element[this.props.nameKey]} onChange={this.handleUpdate} />
                 </label>
             </div>
         )
