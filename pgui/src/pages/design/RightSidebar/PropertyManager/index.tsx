@@ -11,9 +11,9 @@ import TextProperty from "./TextProperty";
 
 class PropertyManager extends Component<any, any> {
     controlType : Controls;
-    constructor(props : any) {
-        super(props);
-    }
+    // constructor(props : any) {
+    //     super(props);
+    // }
     render() {
         let children;
         if (this.props.selectedElement) {
