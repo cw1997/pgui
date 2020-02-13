@@ -8,26 +8,30 @@ import MyAction from "../../../../../myRedux/MyAction";
 // export
 // interface IProps {
 //     element : IMyElement;
-//     readonly key : string;
+//     readonly nameKey : string;
+//     readonly key : number;
 //     readonly title : string;
 //     onUpdateElement : (element : IMyElement) => any;
 // }
 
 class MyInput extends Component<any, any> {
-    element : IMyElement;
-    nameKey : string;
+    element : any;
     value : any;
     constructor(props : any) {
         super(props);
         this.handleUpdate = this.handleUpdate.bind(this);
-        this.element = this.props.element;
-        this.nameKey = this.props.nameKey;
-        this.value = Reflect.get(this.element, this.nameKey);
-        // let element : IMyElement = this.element;
+        if (this.props.element) {
+            this.element = this.props.element;
+            // this.value = this.element[this.props.nameKey];
+            this.value = Reflect.get(this.element, this.props.nameKey);
+        }
     }
     handleUpdate () {
-        Reflect.set(this.element, this.nameKey, this.value);
-        this.props.onUpdateElement(this.element);
+        if (this.element) {
+            Reflect.set(this.element, this.props.nameKey, this.value);
+            this.props.onUpdateElement(this.element);
+        }
+        // this.props.selectedElement[this.props.nameKey] = this.value;
     }
     render() {
         return (
