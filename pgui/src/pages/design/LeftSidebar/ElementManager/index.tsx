@@ -15,7 +15,7 @@ class ElementManager extends Component <any, any> {
         const elements = this.props.elements;
         const elementList : any[] = [];
         elements.forEach(
-            (element : IMyElement) => {elementList.push(<ElementItemWithRedux element={element} />)}
+            (element : IMyElement, key : number) => {elementList.push(<ElementItemWithRedux key={key} element={element} />)}
         );
         return (
             <div className="ElementManager">
