@@ -63,6 +63,7 @@ class Canvas extends Component <any, any> {
                     if (elementName && elementName !== '') {
                         let element : IMyElement = new IMyElement();
                         element.id = elementName;
+                        element.remark = '';
                         element.type = that.props.selectedControl;
                         element.appearance = new Appearance();
                         element.appearance.x = downX;
