@@ -7,6 +7,7 @@ enum Actions {
     setSelectedControl,
     setSelectedElement,
     addElement,
+    updateElement,
 }
 
 export default
@@ -26,6 +27,12 @@ class MyAction {
     static addElement(element : IMyElement) : AnyAction {
         return {
             type: Actions.addElement,
+            element,
+        }
+    }
+    static updateElement(element : IMyElement) : AnyAction {
+        return {
+            type: Actions.updateElement,
             element,
         }
     }

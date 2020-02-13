@@ -35,6 +35,12 @@ class Reduce {
                 const eid : IMyElement['id'] = element.id;
                 elements.set(eid, element);
                 return {...state, elements};
+            case Actions.updateElement:
+                let elementsUpdate = new Map<IMyElement['id'], IMyElement>(state.elements);
+                const elementUpdate : IMyElement = action.element;
+                const eidUpdate : IMyElement['id'] = elementUpdate.id;
+                elementsUpdate.set(eidUpdate, elementUpdate);
+                return {...state, elements: elementsUpdate};
 
             default:
                 return state;
