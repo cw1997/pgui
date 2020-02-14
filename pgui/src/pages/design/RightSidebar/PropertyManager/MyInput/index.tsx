@@ -21,13 +21,14 @@ class MyInput extends Component<any, any> {
         this.handleUpdate = this.handleUpdate.bind(this);
         if (this.props.element) {
             this.element = {...this.props.element};
+            console.info('handleUpdate raw id', this.props.element);
+            console.info('handleUpdate id', this.element);
         }
     }
     handleUpdate (event : any) {
         if (this.element) {
             // Reflect.set(this.element, this.props.nameKey, this.value);
-            let value : string = event.target.value;
-            this.element[this.props.nameKey] = value;
+            this.element[this.props.nameKey] = event.target.value;
             this.props.onUpdateElement(this.element);
         }
         // this.props.selectedElement[this.props.nameKey] = this.value;
@@ -36,8 +37,13 @@ class MyInput extends Component<any, any> {
         return (
             <div className="MyInput">
                 <label htmlFor={this.props.title}>
-                    {this.props.title}
-                    <input id={this.props.title} value={this.props.element[this.props.nameKey]} onChange={this.handleUpdate} />
+                    {this.props.element['id']} - {this.props.title}
+                    <input
+                        readOnly={this.props.readOnly}
+                        id={this.props.title}
+                        value={this.props.element[this.props.nameKey]}
+                        onChange={this.handleUpdate}
+                    />
                 </label>
             </div>
         )

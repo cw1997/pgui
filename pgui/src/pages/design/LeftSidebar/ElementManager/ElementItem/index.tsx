@@ -17,26 +17,24 @@ interface IProps {
 }
 
 class ElementItem extends Component <IProps, any> {
-    element : IMyElement;
     constructor(props : IProps) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        this.element = this.props.element;
     }
     handleClick() {
-        this.props.onSelectElement(this.element);
+        this.props.onSelectElement(this.props.element);
     }
     render() {
         let selected : boolean = false;
         if (this.props.selectedElement) {
-            selected = this.props.selectedElement.id === this.element.id;
+            selected = this.props.selectedElement.id === this.props.element.id;
         }
         return (
             <div
                 className={classnames('ElementItem', {'ElementItem-selected': selected})}
                 onClick={this.handleClick}
             >
-                {this.element.id}
+                {this.props.element.id} - {this.props.element.name}
             </div>
         )
     }
@@ -52,7 +50,8 @@ const mapDispatchToProps = (dispatch : Dispatch) => {
 
 const mapStateToProps = (state : State) => {
     return {
-        selectedElement: state.selectedElement
+        selectedElement: state.selectedElement,
+        // elements: state.elements,
     }
 };
 

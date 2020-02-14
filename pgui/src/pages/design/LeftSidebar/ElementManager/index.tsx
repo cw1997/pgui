@@ -12,10 +12,9 @@ class ElementManager extends Component <any, any> {
     //     super(props);
     // }
     render() {
-        const elements = this.props.elements;
-        const elementList : any[] = [];
-        elements.forEach(
-            (element : IMyElement, key : number) => {elementList.push(<ElementItemWithRedux key={key} element={element} />)}
+        // const elements : IMyElement[] = this.props.elements;
+        const elementList = this.props.elements.map( (element : IMyElement, key : number) =>
+            <ElementItemWithRedux key={key} element={element} />
         );
         return (
             <div className="ElementManager">
