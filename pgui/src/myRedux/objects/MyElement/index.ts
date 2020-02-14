@@ -4,7 +4,8 @@ import {Controls} from "../Control";
 
 export default
 class IMyElement {
-    id : string;
+    id : number;
+    name : string;
     remark : string = '';
     type : Controls;
     appearance? : Appearance;

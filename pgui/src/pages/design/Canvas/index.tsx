@@ -62,7 +62,7 @@ class Canvas extends Component <any, any> {
                     const elementName : string | null = prompt('please input element name:');
                     if (elementName && elementName !== '') {
                         let element : IMyElement = new IMyElement();
-                        element.id = elementName;
+                        element.name = elementName;
                         element.remark = '';
                         element.type = that.props.selectedControl;
                         element.appearance = new Appearance();
