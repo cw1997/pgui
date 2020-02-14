@@ -3,8 +3,13 @@ import IMyElement from "./objects/MyElement";
 
 export default
 class State {
-    selectedControl : Controls;
+    selectedControl : Controls = Controls.select;
     selectedElement : IMyElement | null;
-    elements : Map<IMyElement['id'], IMyElement>;
-    controls: Controls[];
+    elements : IMyElement[] = [];
+    controls: Controls[] = [
+        Controls.select,
+        Controls.button,
+        Controls.text,
+    ];
+    autoIncrementId : number = 0;
 }
